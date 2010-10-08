@@ -1,4 +1,7 @@
 /*
+ * This jquery.numeric.js is from the zdennis fork of the original project. The fork can 
+ * be found here.
+ *  * Forked: http://github.com/zdennis/jQuery-Plugins 
  *
  * Copyright (c) 2006-2010 Sam Collett (http://www.texotela.co.uk)
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
