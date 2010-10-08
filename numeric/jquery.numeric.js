@@ -23,10 +23,13 @@
  * @example  $(".numeric").numeric(null, callback);
  *
  */
-$.fn.numeric = function(decimal, callback)
+$.fn.numeric = function(options)
 {
-	decimal = decimal || ".";
-	callback = typeof callback == "function" ? callback : function(){};
+  options = typeof options == "undefined" ? {} : options;
+  var decimal = options.decimal || ".";
+  var callback = typeof options.callback == "function" ? options.callback : function(){};
+  var allow_decimals = typeof options.allow_decimals == "undefined" ? true : options.allow_decimals;
+  
 	this.keypress(
 		function(e)
 		{
@@ -97,7 +100,7 @@ $.fn.numeric = function(decimal, callback)
 				// if key pressed is the decimal and it is not already in the field
 				if(key == decimal.charCodeAt(0))
 				{
-					if(!this.containsDecimal)
+					if(allow_decimals && !this.containsDecimal)
 					{
 						allow = true;
 						this.containsDecimal = true;
